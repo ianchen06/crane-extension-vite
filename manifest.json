@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Hello Extensions",
+  "description": "Base Level Extension",
+  "version": "0.0.1",
+  "permissions": ["tabs"],
+  "action": {
+    "default_title": "Click to show an alert"
+  },
+  "content_scripts": [
+    {
+      "js": ["src/entrypoints/content/index.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "background": { "service_worker": "src/entrypoints/background/index.js" }
+}
